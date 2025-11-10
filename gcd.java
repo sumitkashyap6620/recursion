@@ -1,14 +1,8 @@
 import java.util.*;
 public class gcd{
     public static int GCD(int x ,int y ){
-           int k =  Math.min(x,y);
-           int p = Math.max(x,y);
-           while(p%k != 0){
-             x = k ;
-             k = p % k ;
-             p = x ;
-           }
-           return k ;
+        if(x%y==0)return y ;
+       return  GCD(y,x%y);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
