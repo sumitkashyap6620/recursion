@@ -1,17 +1,11 @@
 import java.util.Scanner ;
 public class linearsearch{
-    public static void Ls(int arr[] , int x , int idx ){
-        if(idx == 0){
-            if(arr[idx]==x)
-            System.out.print("Yes");
-            else System.out.print("No ");
-            return;
-    }
-       if(arr[idx] == x ){
-        System.out.print("Yes ");
-        return ;
-    } 
-    Ls(arr,x,idx-1);
+    public static int Ls(int arr[] , int x , int idx ){
+        if(idx == -1)
+            return idx ;
+     if(arr[idx] == x )
+         return idx ; 
+    return Ls(arr,x,idx-1);
 }
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
@@ -22,6 +16,6 @@ public class linearsearch{
         arr[i] = sc.nextInt();
         System.out.print("searching elements :- ");
         int x = sc.nextInt();
-        Ls(arr,x,arr.length-1);
+       System.out.print("present at idx = "+ Ls(arr,x,arr.length-1)); 
     }
 }
