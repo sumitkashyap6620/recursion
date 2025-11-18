@@ -1,5 +1,20 @@
 import java.util.* ;
 public class substrings{
+   
+  //  2nd method 
+
+    public static void sub2(String s , String ans){
+          if(s.length() == 0 ){
+            System.out.println(ans);
+            return ;
+          }
+
+          char cur = s.charAt(0);
+
+          sub2(s.substring(1),ans+cur);
+          sub2(s.substring(1),ans);
+    }
+
     public static ArrayList<String> sub(String s ){
     // let string is "abc"
       ArrayList<String> ans = new ArrayList<>(); 
@@ -30,5 +45,6 @@ public class substrings{
         //   System.out.println(ans.get(i));
         // }
         System.out.println(ans);
+        sub2(s,"");
     }
 }
